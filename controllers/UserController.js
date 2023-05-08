@@ -18,8 +18,7 @@ export const register = async (req, res) => {
 
     const doc = new UserModel({
       email: req.body.email,
-      name: req.body.name,
-      surname: req.body.surname,
+      username: req.body.username,
       passwordHash: hash,
     });
 
@@ -44,7 +43,7 @@ export const register = async (req, res) => {
   } catch (err) {
     console.log(err);
     res.status(500).json({
-      message: "Не удалось зарегистрироваться",
+      message: "Не вдалось зареєструватися",
     });
   }
 };
@@ -55,7 +54,7 @@ export const login = async (req, res) => {
 
     if (!user) {
       return res.status(404).json({
-        message: "Пользователь не найден",
+        message: "Юзер не найден",
       });
     }
 
@@ -66,7 +65,7 @@ export const login = async (req, res) => {
 
     if (!isValidPass) {
       return res.status(400).json({
-        message: "Неверный логин или пароль",
+        message: "Логін чи пароль невірні",
       });
     }
 
@@ -89,7 +88,7 @@ export const login = async (req, res) => {
   } catch (err) {
     console.log(err);
     res.status(500).json({
-      message: "Не удалось авторизоваться",
+      message: "Не Вдалось авторизоватися",
     });
   }
 };
@@ -100,7 +99,7 @@ export const getUserInformation = async (req, res) => {
 
     if (!user) {
       return res.status(404).json({
-        message: "Пользователь не найден",
+        message: "Юзер не найден",
       });
     }
 
@@ -109,7 +108,7 @@ export const getUserInformation = async (req, res) => {
     res.json(userData);
   } catch (err) {
     res.status(500).json({
-      message: "Не удалось получить данные",
+      message: "Не вдалося отримати дані",
     });
   }
 };

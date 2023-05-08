@@ -14,7 +14,7 @@ import { UserController, CategoryController } from "./controllers/index.js";
 
 mongoose
   .connect(
-    "mongodb+srv://root:root@cluster0.yn5vt.mongodb.net/financial-accounting?retryWrites=true&w=majority"
+    "mongodb+srv://root:root@cluster0.yn5vt.mongodb.net/CineMate?retryWrites=true&w=majority"
   )
   .then(() => {
     console.log("DB OK");
